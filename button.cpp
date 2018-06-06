@@ -15,6 +15,7 @@ float bx = 10;
 float by = 10;
 float bwidth = 10;
 float bheight = 10;
+int bmethodPointer ;
 sf::Text start;
 sf::Font MyFont;
 
@@ -53,9 +54,11 @@ void setText(String text){
              start.setFont(MyFont);}
              
            } 
- void setMethod(){}    
+ void setMethod(*methodPointer){
+      bmethodPointer = methodPointer;
+ }    
 
-      bool renderTo(sf::RenderWindow& window){
+      void renderTo(sf::RenderWindow& window){
             
              window.draw(Button);
              
@@ -65,7 +68,8 @@ void setText(String text){
              if(detectCollision(window,startButton)){
                  Button.setFillColor(Color(100,100,100,200));
                  if(Mouse::isButtonPressed(Mouse::Button::Left)){
-                    return true;
+                    (*bmethodPointer);
+             
 
                  }
 
@@ -74,7 +78,7 @@ void setText(String text){
                 
              }
              
-             return false;
+             
       }
   private:
       
