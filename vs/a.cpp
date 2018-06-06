@@ -6,6 +6,7 @@ using namespace sf;
     static float screenWidth = 1024;
     static float screenHeight = 720;
     int gameState = 0; 
+   
     stateManager sm(&gameState); 
     menu menui=menu(screenWidth,screenHeight);
     sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight), "My first window bitch!");
@@ -15,6 +16,7 @@ using namespace sf;
           std::cout<<"didsomething";
 
         }
+      int (*doSomethingPointer)() = dosomething;
    
 int main () {
        
