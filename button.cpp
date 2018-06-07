@@ -1,14 +1,15 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <string>
-
+#include <Drawable.hpp>
+#include<SFML/OpenGL.hpp>
 
 using namespace sf;
 
+/////////////glEnable(GL_TEXTURE_2D); //////////in main
 
 
-
- class button{
+ class button : public sf::Drawable{
       public:
 sf::RectangleShape Button;
 float bx = 10;
@@ -81,7 +82,13 @@ void setText(String text){
              
       }
   private:
+      virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const
+      {
+         glBegin(GL_QUADS);
+         
+         glEnd();
       
+      }
       bool detectCollision(sf::RenderWindow& window,sf::RectangleShape shape){
 
             ///////getting mouse Position relative to window 
