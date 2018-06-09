@@ -4,7 +4,7 @@
 using namespace sf;
 
 
-
+//////named newgame cause game was used by sfml apparently
 class newgame{
 
  public :

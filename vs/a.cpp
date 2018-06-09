@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include </home/a/vs/stateManager.cpp>
 #include </home/a/vs/menu.cpp>
 #include </home/a/vs/game.cpp>
 using namespace sf;
@@ -8,25 +7,25 @@ using namespace sf;
     
     static float screenWidth = 1024;
     static float screenHeight = 720;
-  //  stateManager sm = stateManager(); 
     
     
     sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight), "My first window bitch!");
     sf::Vector2i position = sf::Mouse::getPosition();
-    menu m = menu(screenWidth,screenHeight);
-    newgame g;
+    menu Menu = menu(screenWidth,screenHeight);
+    newgame Game;
     bool inGame = false;
      
 
- 
+ ///setup stuff
  int newGame(){
      if(!inGame){
-    g.setupbox();
+    Game.setupbox();
     }
     inGame = true;
   return 1; 
  }
- int (*i)() = newGame; 
+ /////create pointer
+ int (*newGamePtr)() = newGame; 
  
 
 
@@ -44,13 +43,13 @@ int main () {
         }
       window.clear();
  
- 
+ ///////draw menu or game
    if(!inGame){
-      m.renderTo(*i,window);
-      window.draw(m);
+      Menu.checkAllForCollision(*newGamePtr,window);
+      window.draw(Menu);
       }
    if(inGame){
-      window.draw(g.aShape);
+      window.draw(Game.aShape);
      //case 3:
 }
 

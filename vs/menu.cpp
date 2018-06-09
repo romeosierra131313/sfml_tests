@@ -26,6 +26,8 @@ if (!MyFont.loadFromFile("arial.ttf"))
         throw std::string("Failed to load Arial.ttf");
 }
 
+///////////setup stuff here
+
              startButton.setSize(sf::Vector2f(screenWidth/10,screenHeight/20));
              startButton.setPosition(sf::Vector2f(screenWidth/10,screenHeight/20));
              otherButton.setFillColor(Color(100,100,100,100));
@@ -43,7 +45,7 @@ if (!MyFont.loadFromFile("arial.ttf"))
            } 
       
 
-      bool renderTo(int i() ,sf::RenderWindow& window){
+      bool checkAllForCollision(int i() ,sf::RenderWindow& window){
            
 
              //////checking mouse collision with hitboxs
