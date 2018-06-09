@@ -2,23 +2,38 @@
 #include <SFML/Graphics.hpp>
 #include </home/a/vs/stateManager.cpp>
 #include </home/a/vs/menu.cpp>
+#include </home/a/vs/game.cpp>
 using namespace sf;
+
+    
     static float screenWidth = 1024;
     static float screenHeight = 720;
-    int gameState = 0; 
-    stateManager sm(&gameState); 
-    menu menui=menu(screenWidth,screenHeight);
+  //  stateManager sm = stateManager(); 
+    
+    
     sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight), "My first window bitch!");
     sf::Vector2i position = sf::Mouse::getPosition();
+    menu m = menu(screenWidth,screenHeight);
+    newgame g;
+    bool inGame = false;
+     
 
-     void dosomething(){
-          std::cout<<"didsomething";
+ 
+ int newGame(){
+     if(!inGame){
+    g.setupbox();
+    }
+    inGame = true;
+  return 1; 
+ }
+ int (*i)() = newGame; 
+ 
 
-        }
+
    
 int main () {
-       
      while (window.isOpen())
+    
     {
         
         sf::Event event;
@@ -28,31 +43,28 @@ int main () {
                 window.close();
         }
       window.clear();
-
-    switch (gameState){
-     case 0:
-   
-    
-     
-      menui.setPositionIdicator();
-     // menui.renderTo(window);
-      if(menui.renderTo(window)){
-           dosomething();
-
-      } 
-     // window.draw(menui.cursor);
-     // window.draw(menui.start);
-     //case 2:
+ 
+ 
+   if(!inGame){
+      m.renderTo(*i,window);
+      window.draw(m);
+      }
+   if(inGame){
+      window.draw(g.aShape);
      //case 3:
+}
 
+     window.display();
+    
     }
     
-      window.display();
+      
+
+   
 
 
 
-
-    }
+    
 
     return 0;
 }

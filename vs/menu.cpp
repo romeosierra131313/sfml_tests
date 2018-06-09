@@ -8,9 +8,8 @@ using namespace sf;
 
 
 
- class menu{
+ class menu: public sf::Drawable {
       public:
-sf::RectangleShape cursor;
 sf::RectangleShape startButton;
 sf::RectangleShape otherButton;
 sf::Text start;
@@ -18,20 +17,14 @@ sf::Font MyFont;
 int positionIndicator = 0;
 std::string g = "Start";
 sf::String t;
-           
-           
+         
+         public:
             menu(float screenWidth,float screenHeight){
                 
 if (!MyFont.loadFromFile("arial.ttf"))
 {
         throw std::string("Failed to load Arial.ttf");
 }
-
-            
-             cursor.setSize(sf::Vector2f(screenWidth/10,screenHeight/20));
-             cursor.setOutlineColor(sf::Color::Green);
-             cursor.setPosition(sf::Vector2f(screenWidth/10,screenHeight/20));
-
 
              startButton.setSize(sf::Vector2f(screenWidth/10,screenHeight/20));
              startButton.setPosition(sf::Vector2f(screenWidth/10,screenHeight/20));
@@ -49,41 +42,30 @@ if (!MyFont.loadFromFile("arial.ttf"))
              
            } 
       
- void setPositionIdicator(){
-            
-       
-       
 
-      } 
-      bool renderTo(sf::RenderWindow& window){
-            
-             
-             window.draw(start);
-             window.draw(startButton);
-             window.draw(otherButton);
-             window.draw(cursor);
+      bool renderTo(int i() ,sf::RenderWindow& window){
+           
 
              //////checking mouse collision with hitboxs
              ////// change to array if you add more buttons
              if(detectCollision(window,startButton)){
                  positionIndicator = 0;
-                 cursor.setFillColor(Color::Blue);
-                 cursor.setPosition(startButton.getPosition());
-                 if(Mouse::isButtonPressed(Mouse::Button::Left)){
-                    return true;
-
-                 }
-
+                 startButton.setFillColor(Color::Blue); 
+                   if(detectCollision(window,startButton) && sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
+                       i();
+                       
+                   }
              }
-             else if(detectCollision(window,otherButton)){
+             else if (!detectCollision(window,startButton)){   startButton.setFillColor(Color::White); }
+
+             if(detectCollision(window,otherButton)){
                  positionIndicator = 1;
-                 cursor.setFillColor(Color::Blue);
-                 cursor.setPosition(otherButton.getPosition());
-                 if(Mouse::isButtonPressed(Mouse::Button::Left)){
-                    return true;
-
+                 otherButton.setFillColor(Color::Blue);
+                 
                  }
-             }
+                 else if (!detectCollision(window,otherButton))
+                 {   otherButton.setFillColor(Color::White); }
+             
              return false;
       }
       bool detectCollision(sf::RenderWindow& window,sf::RectangleShape shape){
@@ -100,13 +82,20 @@ if (!MyFont.loadFromFile("arial.ttf"))
 
       }
 
+   // virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    //...          
+ void draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+    //assuming m_shape is the sf::RectangleShape(detectCollision(window,otherButton))
+    target.draw(startButton,states);
+    target.draw(otherButton,states);
+} 
+};
       
-       int main(){
-      
-             return 0;};    
+    
 
        
      
-};
+
           
           
