@@ -1,0 +1,51 @@
+#include <iostream>
+#include <SFML/Graphics.hpp>
+
+using namespace sf;
+
+float iwidth;
+float iheight;
+Vector2i() position;
+IntRect() source;
+Texture tex;
+
+Sprite sprite(tex,source(position().x,position().y,width,height));
+Clock clock;
+
+class animation:drawable{
+
+      animation(Vector2i() location,float width,float height,String location){
+              
+position = location;
+iwidth = width;
+iheight = height;
+
+          
+if (!tex.loadFromFile("image.png"))
+{
+    // error...
+}
+      
+      }
+      
+ void update(){
+    if(clock.getElapsedTime > 1.0f){
+        if(source.left == 600){
+           source.left = 0 ;
+        }  /////////600 is the x coordinate of last texture location
+        else{
+           source.left += 300;   ///////////300 is the width of 1 sprite
+        }
+        sprite.setTextureRect(source);
+        clock.restart();
+    }
+   
+ }     
+ 
+
+target draw(){
+  update();
+  window.draw(sprite);
+}
+
+}
