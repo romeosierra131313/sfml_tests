@@ -13,11 +13,12 @@ int main()
 
 {
 
-    m.initWindow();
-    while( m.getMyWindow()->getisFinished()){
+    while( !m.getMyWindow()->getisFinished()){
+     
+     m.update();
      m.render();
-  
+     
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
