@@ -17,6 +17,11 @@ class gameManager{
          void update();
          void render();
          void setScreen(screen* ascreen);
+         void showTitle();
+         void startGame();
+         void showEditorScreen();
+         void showEditor();
+         void showCredits();
          sf::Vector2u getScreenSize();
          void setSize(sf::Vector2u);
          bool isDone = false;

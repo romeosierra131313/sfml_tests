@@ -5,20 +5,16 @@
 #include <iostream>
 
 namespace mine  {
-   class titleScreen:public screen{
+   class CreditsScreen:public screen{
        public:
-        titleScreen();
+        CreditsScreen();
         void setup(sf::Vector2u) override;
         void handleInput(sf::Event event ,gameManager* gameManager) override;
         void render(sf::RenderTarget* target) override;
         void changeColor(sf::Text &text,sf::Vector2i &myPos);
         
-       
          
-     sf::Text NewGame;
-     sf::Text Options;
-     sf::Text Editor;
-     sf::Text Credits;
+     sf::Text Back;
      sf::Texture backGround;
      sf::Sprite spr;
      sf::Font font;

@@ -1,0 +1,60 @@
+
+
+
+
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            
+            "label": "comp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-c",
+                "main.cpp",
+                "game.h",
+                "game.cpp",
+                "screen.h",
+                "windowContainer.cpp",
+                "windowContainer.h",
+                
+                "titleScreen.cpp",
+                "titleScreen.h"
+            ] 
+        }, {
+            "dependsOn": "comp" ,
+           "label": "linking",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.o",
+                "game.o",
+                "windowContainer.o",
+                "titleScreen.o",
+                "-o",
+                "sfml-app",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system"
+                
+            ],
+        
+        },{
+            
+            
+         "dependsOn": "linking" ,
+           "label": "running",
+            "type": "shell",
+            "command": "./sfml-app",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+            
+        }
+    ]
+    
+    }
