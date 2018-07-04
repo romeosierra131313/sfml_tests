@@ -157,10 +157,17 @@ void EditorScreen::createNewMap(gameManager* gameManager){
    }else{
        std::ofstream outfile (nameString);
        outfile.close();
+       gameManager->getMyWindow()->getView()->zoom(1.0f);
        gameManager->showEditor();
        }
    
 
 }
+void EditorScreen::renderUI(gameManager* gameManager,sf::RenderTarget* target){
+             gameManager->getMyWindow()->getwindow()->setView(
+                gameManager->getMyWindow()->getwindow()->getDefaultView()  
+             );
+             
+   }
 ;
 }

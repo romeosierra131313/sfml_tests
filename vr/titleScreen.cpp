@@ -73,7 +73,7 @@ void titleScreen::handleInput(sf::Event event ,gameManager* gameManager){
        sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
          Editor.setFillColor(sf::Color::Red);
          std::cout<<"red";
-         gameManager->showEditor();
+         gameManager->showEditorScreen();
 
     }
        else if(Credits.getGlobalBounds().contains(myPos.x,myPos.y)  &&   
@@ -109,5 +109,13 @@ void titleScreen::render(sf::RenderTarget* target){
     }
     
 
-}; 
+}
+void titleScreen::renderUI(gameManager* gameManager,sf::RenderTarget* target){
+             gameManager->getMyWindow()->getwindow()->setView(
+                gameManager->getMyWindow()->getwindow()->getDefaultView() 
+             );
+             
+   }
+
+; 
 }

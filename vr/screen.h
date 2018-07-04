@@ -16,6 +16,7 @@ struct screen{
       virtual void setup(sf::Vector2u) = 0;
       virtual void handleInput(sf::Event,gameManager* gameManager)=0;
       virtual void render(sf::RenderTarget* target)=0;
+      virtual void renderUI(gameManager* gameManager,sf::RenderTarget* target)=0;
       screen(const screen&) = delete;
       screen& operator=(const screen&) = delete;
 };

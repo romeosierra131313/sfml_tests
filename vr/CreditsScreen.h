@@ -11,6 +11,7 @@ namespace mine  {
         void setup(sf::Vector2u) override;
         void handleInput(sf::Event event ,gameManager* gameManager) override;
         void render(sf::RenderTarget* target) override;
+        void renderUI(gameManager* gameManager,sf::RenderTarget* target)override;
         void changeColor(sf::Text &text,sf::Vector2i &myPos);
         
          

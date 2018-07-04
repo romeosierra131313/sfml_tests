@@ -9,9 +9,15 @@ namespace mine{
          Tile(){}
          float x;
          float y;
-         std::string tileType;
-         Tile(const Tile&) = delete;
-         Tile& operator=(const Tile&) =delete;
+         int textureTop;
+         int  textureLeft;
+         int tileType;
+         void render(sf::RenderTarget* target,sf::Sprite spr){
+              spr.setPosition(x,y);
+              target->draw(spr);
+         }
+        // Tile(const Tile&) = delete;
+        // Tile& operator=(const Tile&) =delete;
 
 
   };

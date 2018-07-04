@@ -19,7 +19,12 @@
                 "screen.h",
                 "windowContainer.cpp",
                 "windowContainer.h",
-                
+                "EditorScreen.cpp",
+                "EditorScreen.h",
+                "Editor.cpp",
+                "Editor.h",
+                "Tile.h",
+                "Tile.cpp",
                 "titleScreen.cpp",
                 "titleScreen.h"
             ] 
@@ -33,6 +38,9 @@
                 "game.o",
                 "windowContainer.o",
                 "titleScreen.o",
+                "EditorScreen.o",
+                "Editor.o",
+                "Tile.o",
                 "-o",
                 "sfml-app",
                 "-lsfml-graphics",

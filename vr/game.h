@@ -30,6 +30,8 @@ class gameManager{
          windowContainer myWindow ;
          screen* myScreen{nullptr};
          sf::Vector2u screenSize;
+         sf::Clock clock;
+         float lastTime = 0;
 };
 }
 #endif

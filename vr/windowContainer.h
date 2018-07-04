@@ -16,10 +16,11 @@ class windowContainer{
        bool getisFinished();
        void update(sf::Event);
        sf::RenderWindow* getwindow(){return &renderWindow;};
-       
+       sf::View* getView(){return &view;};
      private:
       
  sf::RenderWindow renderWindow;
+ sf::View view;
  bool isFinished;
 
 };

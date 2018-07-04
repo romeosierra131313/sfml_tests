@@ -53,4 +53,10 @@ void CreditsScreen::render(sf::RenderTarget* target){
     
 
 }
+void CreditsScreen::renderUI(gameManager* gameManager,sf::RenderTarget* target){
+             gameManager->getMyWindow()->getwindow()->setView(
+                gameManager->getMyWindow()->getwindow()->getDefaultView()  
+             );
+             
+   }
 };

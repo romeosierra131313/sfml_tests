@@ -12,8 +12,12 @@ void windowContainer::windowInit(sf::Vector2u windowSize,std::string title){
 	 renderWindow.create(sf::VideoMode{ windowSize.x, windowSize.y, 32 },title, sf::Style::Default);
    renderWindow.setSize(windowSize);
    renderWindow.setTitle(title);
+
+   view.setCenter(sf::Vector2f(windowSize.x/2,windowSize.y/2));
+   view.setSize(sf::Vector2f(1280,720));
+   renderWindow.setView(view);
    renderWindow.display();
-   std::cout<< "p";
+   
   
    isFinished = false;
 
