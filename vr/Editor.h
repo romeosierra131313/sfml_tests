@@ -15,12 +15,14 @@ namespace mine{
         void handleInput(sf::Event event ,gameManager* gameManager) override;
         void render(sf::RenderTarget* target) override;
         void renderUI(gameManager* gameManager,sf::RenderTarget* target)override;
-        
+        sf::Vector2f getTerra(Tile& t);
+
         private:
         
          std::vector<Tile> map;
          std::vector<Tile> UImap;
          std::vector<Tile>::iterator it;
+         std::vector<Tile>::iterator it2;
           sf::Font font;
           sf::Text t;
           sf::RectangleShape tileHitBox;
@@ -41,6 +43,8 @@ namespace mine{
          sf::IntRect rectSourceSpritetemp;
          unsigned int top;
          unsigned int left;
+
+         
          
     };
 

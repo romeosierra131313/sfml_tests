@@ -9,6 +9,8 @@ namespace mine{
          Tile(){}
          float x;
          float y;
+         int bitmasktype;
+         bool isFliped;
          int textureTop;
          int  textureLeft;
          int tileType;
