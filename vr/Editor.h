@@ -23,6 +23,7 @@ namespace mine{
          std::vector<Tile> UImap;
          std::vector<Tile>::iterator it;
          std::vector<Tile>::iterator it2;
+         std::string name;
           sf::Font font;
           sf::Text t;
           sf::RectangleShape tileHitBox;
