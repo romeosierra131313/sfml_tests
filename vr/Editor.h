@@ -11,6 +11,7 @@ namespace mine{
     class Editor:public screen{
         public:
          Editor();
+         Editor(std::string name);
         void setup(sf::Vector2u) override;
         void handleInput(sf::Event event ,gameManager* gameManager) override;
         void render(sf::RenderTarget* target) override;
