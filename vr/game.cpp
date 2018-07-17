@@ -53,8 +53,8 @@ void gameManager::showEditorScreen(){
      setScreen(new EditorScreen());
 
 }
-void gameManager::showEditor(){
-     setScreen(new Editor());
+void gameManager::showEditor(const std::string& name){
+     setScreen(new Editor(name));
 
 }
 void gameManager::showCredits(){
