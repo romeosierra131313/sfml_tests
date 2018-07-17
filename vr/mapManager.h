@@ -11,8 +11,8 @@ namespace mine{
    public: 
     mapManager();
     void checkIfExists(string name);
-    void openMap(String name,gameManager* gameManager);
-    void writeMap(String name);
+    void openMap(string name,gameManager* gameManager);
+    void writeMap(string name);
    
     std::ifstream myFile;
     std::ifstream ifile;
