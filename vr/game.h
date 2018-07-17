@@ -20,7 +20,7 @@ class gameManager{
          void showTitle();
          void startGame();
          void showEditorScreen();
-         void showEditor();
+         void showEditor(const std::string name);
          void showCredits();
          sf::Vector2u getScreenSize();
          void setSize(sf::Vector2u);
