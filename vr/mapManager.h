@@ -10,9 +10,9 @@ namespace mine{
     
    public: 
     mapManager();
-    checkIfExists(string name);
-    openMap(String name,gameManager* gameManager);
-    writeMap(String name);
+    void checkIfExists(string name);
+    void openMap(String name,gameManager* gameManager);
+    void writeMap(String name);
    
     std::ifstream myFile;
     std::ifstream ifile;
