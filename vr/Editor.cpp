@@ -14,6 +14,21 @@ namespace mine{
              drawingTerrain = true;
              TileWidth = 64;
              
+             
+
+    }
+     Editor::Editor(std::string& name){
+             font.loadFromFile("arial.ttf");  
+             editorView.setCenter(sf::Vector2f(640,392));
+             editorView.setSize(sf::Vector2f(1600,778)); 
+             TileSet.loadFromFile("terra.png");
+             toggleGrid = true;
+             hasFocus = false;
+             layer2 = false;
+             drawingTerrain = true;
+             TileWidth = 64;
+             name = name;
+             
 
     }
     void Editor::setup(sf::Vector2u screenSize){
