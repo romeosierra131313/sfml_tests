@@ -158,7 +158,7 @@ void EditorScreen::createNewMap(gameManager* gameManager){
        std::ofstream outfile (nameString);
        outfile.close();
        gameManager->getMyWindow()->getView()->zoom(1.0f);
-       gameManager->showEditor();
+       gameManager->showEditor(name);
        }
    
 
